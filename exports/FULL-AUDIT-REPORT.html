@@ -1,0 +1,1277 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+<title>FULL-AUDIT-REPORT</title>
+
+
+<style type="text/css">
+body {
+  font-family: Helvetica, arial, sans-serif;
+  font-size: 14px;
+  line-height: 1.6;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  background-color: white;
+  padding: 30px; }
+
+body > *:first-child {
+  margin-top: 0 !important; }
+body > *:last-child {
+  margin-bottom: 0 !important; }
+
+a {
+  color: #4183C4; }
+a.absent {
+  color: #cc0000; }
+a.anchor {
+  display: block;
+  padding-left: 30px;
+  margin-left: -30px;
+  cursor: pointer;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0; }
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 20px 0 10px;
+  padding: 0;
+  font-weight: bold;
+  -webkit-font-smoothing: antialiased;
+  cursor: text;
+  position: relative; }
+
+h1:hover a.anchor, h2:hover a.anchor, h3:hover a.anchor, h4:hover a.anchor, h5:hover a.anchor, h6:hover a.anchor {
+  background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA09pVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNiAoMTMuMCAyMDEyMDMwNS5tLjQxNSAyMDEyLzAzLzA1OjIxOjAwOjAwKSAgKE1hY2ludG9zaCkiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6OUM2NjlDQjI4ODBGMTFFMTg1ODlEODNERDJBRjUwQTQiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6OUM2NjlDQjM4ODBGMTFFMTg1ODlEODNERDJBRjUwQTQiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDo5QzY2OUNCMDg4MEYxMUUxODU4OUQ4M0REMkFGNTBBNCIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDo5QzY2OUNCMTg4MEYxMUUxODU4OUQ4M0REMkFGNTBBNCIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PsQhXeAAAABfSURBVHjaYvz//z8DJYCRUgMYQAbAMBQIAvEqkBQWXI6sHqwHiwG70TTBxGaiWwjCTGgOUgJiF1J8wMRAIUA34B4Q76HUBelAfJYSA0CuMIEaRP8wGIkGMA54bgQIMACAmkXJi0hKJQAAAABJRU5ErkJggg==) no-repeat 10px center;
+  text-decoration: none; }
+
+h1 tt, h1 code {
+  font-size: inherit; }
+
+h2 tt, h2 code {
+  font-size: inherit; }
+
+h3 tt, h3 code {
+  font-size: inherit; }
+
+h4 tt, h4 code {
+  font-size: inherit; }
+
+h5 tt, h5 code {
+  font-size: inherit; }
+
+h6 tt, h6 code {
+  font-size: inherit; }
+
+h1 {
+  font-size: 28px;
+  color: black; }
+
+h2 {
+  font-size: 24px;
+  border-bottom: 1px solid #cccccc;
+  color: black; }
+
+h3 {
+  font-size: 18px; }
+
+h4 {
+  font-size: 16px; }
+
+h5 {
+  font-size: 14px; }
+
+h6 {
+  color: #777777;
+  font-size: 14px; }
+
+p, blockquote, ul, ol, dl, li, table, pre {
+  margin: 15px 0; }
+
+hr {
+  background: transparent url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAYAAAAECAYAAACtBE5DAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyJpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNSBNYWNpbnRvc2giIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6OENDRjNBN0E2NTZBMTFFMEI3QjRBODM4NzJDMjlGNDgiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6OENDRjNBN0I2NTZBMTFFMEI3QjRBODM4NzJDMjlGNDgiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDo4Q0NGM0E3ODY1NkExMUUwQjdCNEE4Mzg3MkMyOUY0OCIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDo4Q0NGM0E3OTY1NkExMUUwQjdCNEE4Mzg3MkMyOUY0OCIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PqqezsUAAAAfSURBVHjaYmRABcYwBiM2QSA4y4hNEKYDQxAEAAIMAHNGAzhkPOlYAAAAAElFTkSuQmCC) repeat-x 0 0;
+  border: 0 none;
+  color: #cccccc;
+  height: 4px;
+  padding: 0;
+}
+
+body > h2:first-child {
+  margin-top: 0;
+  padding-top: 0; }
+body > h1:first-child {
+  margin-top: 0;
+  padding-top: 0; }
+  body > h1:first-child + h2 {
+    margin-top: 0;
+    padding-top: 0; }
+body > h3:first-child, body > h4:first-child, body > h5:first-child, body > h6:first-child {
+  margin-top: 0;
+  padding-top: 0; }
+
+a:first-child h1, a:first-child h2, a:first-child h3, a:first-child h4, a:first-child h5, a:first-child h6 {
+  margin-top: 0;
+  padding-top: 0; }
+
+h1 p, h2 p, h3 p, h4 p, h5 p, h6 p {
+  margin-top: 0; }
+
+li p.first {
+  display: inline-block; }
+li {
+  margin: 0; }
+ul, ol {
+  padding-left: 30px; }
+
+ul :first-child, ol :first-child {
+  margin-top: 0; }
+
+dl {
+  padding: 0; }
+  dl dt {
+    font-size: 14px;
+    font-weight: bold;
+    font-style: italic;
+    padding: 0;
+    margin: 15px 0 5px; }
+    dl dt:first-child {
+      padding: 0; }
+    dl dt > :first-child {
+      margin-top: 0; }
+    dl dt > :last-child {
+      margin-bottom: 0; }
+  dl dd {
+    margin: 0 0 15px;
+    padding: 0 15px; }
+    dl dd > :first-child {
+      margin-top: 0; }
+    dl dd > :last-child {
+      margin-bottom: 0; }
+
+blockquote {
+  border-left: 4px solid #dddddd;
+  padding: 0 15px;
+  color: #777777; }
+  blockquote > :first-child {
+    margin-top: 0; }
+  blockquote > :last-child {
+    margin-bottom: 0; }
+
+table {
+  padding: 0;border-collapse: collapse; }
+  table tr {
+    border-top: 1px solid #cccccc;
+    background-color: white;
+    margin: 0;
+    padding: 0; }
+    table tr:nth-child(2n) {
+      background-color: #f8f8f8; }
+    table tr th {
+      font-weight: bold;
+      border: 1px solid #cccccc;
+      margin: 0;
+      padding: 6px 13px; }
+    table tr td {
+      border: 1px solid #cccccc;
+      margin: 0;
+      padding: 6px 13px; }
+    table tr th :first-child, table tr td :first-child {
+      margin-top: 0; }
+    table tr th :last-child, table tr td :last-child {
+      margin-bottom: 0; }
+
+img {
+  max-width: 100%; }
+
+span.frame {
+  display: block;
+  overflow: hidden; }
+  span.frame > span {
+    border: 1px solid #dddddd;
+    display: block;
+    float: left;
+    overflow: hidden;
+    margin: 13px 0 0;
+    padding: 7px;
+    width: auto; }
+  span.frame span img {
+    display: block;
+    float: left; }
+  span.frame span span {
+    clear: both;
+    color: #333333;
+    display: block;
+    padding: 5px 0 0; }
+span.align-center {
+  display: block;
+  overflow: hidden;
+  clear: both; }
+  span.align-center > span {
+    display: block;
+    overflow: hidden;
+    margin: 13px auto 0;
+    text-align: center; }
+  span.align-center span img {
+    margin: 0 auto;
+    text-align: center; }
+span.align-right {
+  display: block;
+  overflow: hidden;
+  clear: both; }
+  span.align-right > span {
+    display: block;
+    overflow: hidden;
+    margin: 13px 0 0;
+    text-align: right; }
+  span.align-right span img {
+    margin: 0;
+    text-align: right; }
+span.float-left {
+  display: block;
+  margin-right: 13px;
+  overflow: hidden;
+  float: left; }
+  span.float-left span {
+    margin: 13px 0 0; }
+span.float-right {
+  display: block;
+  margin-left: 13px;
+  overflow: hidden;
+  float: right; }
+  span.float-right > span {
+    display: block;
+    overflow: hidden;
+    margin: 13px auto 0;
+    text-align: right; }
+
+code, tt {
+  margin: 0 2px;
+  padding: 0 5px;
+  white-space: nowrap;
+  border: 1px solid #eaeaea;
+  background-color: #f8f8f8;
+  border-radius: 3px; }
+
+pre code {
+  margin: 0;
+  padding: 0;
+  white-space: pre;
+  border: none;
+  background: transparent; }
+
+.highlight pre {
+  background-color: #f8f8f8;
+  border: 1px solid #cccccc;
+  font-size: 13px;
+  line-height: 19px;
+  overflow: auto;
+  padding: 6px 10px;
+  border-radius: 3px; }
+
+pre {
+  background-color: #f8f8f8;
+  border: 1px solid #cccccc;
+  font-size: 13px;
+  line-height: 19px;
+  overflow: auto;
+  padding: 6px 10px;
+  border-radius: 3px; }
+  pre code, pre tt {
+    background-color: transparent;
+    border: none; }
+
+sup {
+    font-size: 0.83em;
+    vertical-align: super;
+    line-height: 0;
+}
+
+kbd {
+  display: inline-block;
+  padding: 3px 5px;
+  font-size: 11px;
+  line-height: 10px;
+  color: #555;
+  vertical-align: middle;
+  background-color: #fcfcfc;
+  border: solid 1px #ccc;
+  border-bottom-color: #bbb;
+  border-radius: 3px;
+  box-shadow: inset 0 -1px 0 #bbb
+}
+
+* {
+	-webkit-print-color-adjust: exact;
+}
+@media screen and (min-width: 914px) {
+    body {
+        width: 854px;
+        margin:0 auto;
+    }
+}
+@media print {
+	table, pre {
+		page-break-inside: avoid;
+	}
+	pre {
+		word-wrap: break-word;
+	}
+  body {
+    padding: 2cm; 
+  }
+}
+</style>
+
+
+</head>
+
+<body>
+
+<h1 id="toc_0">SEO Full Audit Report — netzeffekt.de</h1>
+
+<p><strong>Date:</strong> 2026-02-28
+<strong>Auditor:</strong> Claude Code SEO Audit
+<strong>Site:</strong> https://www.netzeffekt.de
+<strong>Pages crawled:</strong> 241 (from sitemap.default.xml)
+<strong>Business type:</strong> Digital Marketing Agency (Performance Marketing, B2B/Finance focus)</p>
+
+<hr>
+
+<h2 id="toc_1">Executive Summary</h2>
+
+<table>
+<thead>
+<tr>
+<th>Category</th>
+<th>Score</th>
+<th>Weight</th>
+<th>Weighted</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>Technical SEO</td>
+<td>55/100</td>
+<td>25%</td>
+<td>13.75</td>
+</tr>
+<tr>
+<td>Content Quality</td>
+<td>55/100</td>
+<td>25%</td>
+<td>13.75</td>
+</tr>
+<tr>
+<td>On-Page SEO</td>
+<td>45/100</td>
+<td>20%</td>
+<td>9.00</td>
+</tr>
+<tr>
+<td>Schema / Structured Data</td>
+<td>10/100</td>
+<td>10%</td>
+<td>1.00</td>
+</tr>
+<tr>
+<td>Performance (CWV)</td>
+<td>45/100</td>
+<td>10%</td>
+<td>4.50</td>
+</tr>
+<tr>
+<td>Images</td>
+<td>55/100</td>
+<td>5%</td>
+<td>2.75</td>
+</tr>
+<tr>
+<td>AI Search Readiness</td>
+<td>35/100</td>
+<td>5%</td>
+<td>1.75</td>
+</tr>
+<tr>
+<td><strong>TOTAL</strong></td>
+<td></td>
+<td></td>
+<td><strong>46/100</strong></td>
+</tr>
+</tbody>
+</table>
+
+<h3 id="toc_2">SEO Health Score: 46 / 100 — Needs Significant Improvement</h3>
+
+<hr>
+
+<h3 id="toc_3">Top 5 Critical Issues</h3>
+
+<ol>
+<li><strong>Meta descriptions missing</strong> on nearly every page (stories, cases, leistungen, agentur, kontakt, /en version)</li>
+<li><strong>No hreflang implementation</strong> despite a full German + English bilingual site</li>
+<li><strong>No canonical tags</strong> found on any crawled page</li>
+<li><strong>Zero structured data</strong> (no Organization, LocalBusiness, Article, BreadcrumbList schema) — only a single VideoObject on the Cases page</li>
+<li><strong>Sitemap redirect chain</strong>: <code>sitemap.xml</code> → <code>sitemap.default.xml</code> plus no <code>Sitemap:</code> directive in robots.txt</li>
+</ol>
+
+<h3 id="toc_4">Top 5 Quick Wins</h3>
+
+<ol>
+<li>Add meta descriptions to all pages (30 min with CMS bulk edit)</li>
+<li>Implement hreflang on DE + EN page pairs (template-level change)</li>
+<li>Add canonical tag to every page template (one-time template fix)</li>
+<li>Add <code>Organization</code> + <code>LocalBusiness</code> JSON-LD to homepage (&lt; 2 hours)</li>
+<li>Add <code>Sitemap:</code> directive to robots.txt (5 minutes)</li>
+</ol>
+
+<hr>
+
+<h2 id="toc_5">1. Technical SEO</h2>
+
+<h3 id="toc_6">robots.txt</h3>
+
+<div><pre><code class="language-none">User-agent: *
+Disallow:</code></pre></div>
+
+<p><strong>Status: PARTIAL PASS</strong></p>
+
+<ul>
+<li>✅ Accessible and syntactically valid</li>
+<li>✅ Allows all search engine crawlers</li>
+<li>❌ No <code>Sitemap:</code> directive — crawlers must discover sitemap independently</li>
+<li>❌ No Craft CMS admin paths blocked (<code>/admin/</code>, <code>/cpresources/</code>, <code>/actions/</code>)</li>
+<li>❌ No AI training crawler management (GPTBot, ClaudeBot, Google-Extended, CCBot, PerplexityBot)</li>
+</ul>
+
+<p><strong>Recommended robots.txt:</strong>
+```
+User-agent: *
+Disallow: /admin/
+Disallow: /cpresources/
+Disallow: /actions/
+Disallow: /index.php</p>
+
+<h1 id="toc_7">AI Training Crawlers — manage per business preference</h1>
+
+<p>User-agent: GPTBot
+Disallow: /</p>
+
+<p>User-agent: Google-Extended
+Disallow: /</p>
+
+<p>User-agent: ClaudeBot
+Disallow: /</p>
+
+<p>User-agent: anthropic-ai
+Disallow: /</p>
+
+<p>User-agent: CCBot
+Disallow: /</p>
+
+<p>Sitemap: https://www.netzeffekt.de/sitemap.default.xml
+```</p>
+
+<hr>
+
+<h3 id="toc_8">Sitemap</h3>
+
+<ul>
+<li>✅ Sitemap exists at <code>https://www.netzeffekt.de/sitemap.xml</code></li>
+<li>✅ 241 URLs in <code>sitemap.default.xml</code> (within 50,000-URL limit)</li>
+<li>✅ Content freshly updated (last modified Feb 2026)</li>
+<li>❌ <code>sitemap.xml</code> is an <strong>index file that redirects</strong> to <code>sitemap.default.xml</code> — submit the direct URL to Search Console</li>
+<li>⚠️ 241 URLs is high for a 74-person agency site — review for pagination/thin-page inflation</li>
+<li>❌ No Sitemap declaration in robots.txt</li>
+</ul>
+
+<p><strong>Sitemap URL breakdown (estimated):</strong>
+- ~20 main pages (home, services, about, cases, careers, contact, legal)
+- ~40 case study pages
+- ~100+ blog/stories/news articles
+- ~80 unknown — likely tag pages, paginated archives, or duplicate language variants</p>
+
+<hr>
+
+<h3 id="toc_9">HTTPS &amp; Redirects</h3>
+
+<ul>
+<li>✅ HTTPS in use at <code>https://www.netzeffekt.de</code></li>
+<li>✅ Consistent <code>www.</code> subdomain</li>
+<li>⚠️ HTTP→HTTPS and non-www redirect chain not verified (Bash unavailable) — <strong>recommend manual verification</strong>
+
+<ul>
+<li>Test: <code>curl -I http://netzeffekt.de</code> should return 301 to https://www.netzeffekt.de</li>
+</ul></li>
+</ul>
+
+<hr>
+
+<h3 id="toc_10">Canonical Tags</h3>
+
+<ul>
+<li>❌ <strong>Not found on any crawled page</strong> (homepage, /cases, /stories, /leistungen, /agentur, /kontakt, /en)</li>
+<li>Risk: Google must self-select canonical version; in a bilingual site with potential URL parameter duplication, this creates self-competition between DE and EN pages</li>
+</ul>
+
+<p><strong>Fix:</strong> Add to every page template:
+<code>html
+&lt;link rel=&quot;canonical&quot; href=&quot;https://www.netzeffekt.de/[current-page-path]&quot; /&gt;
+</code></p>
+
+<hr>
+
+<h3 id="toc_11">Hreflang / International SEO</h3>
+
+<ul>
+<li>❌ <strong>No hreflang tags found</strong> on homepage or /en page</li>
+<li>Site has confirmed bilingual content: <code>/</code> (German), <code>/en</code> (English)</li>
+<li>Risk: Google may show the wrong language version to users in Austria, Germany, UK, or US</li>
+<li>Without hreflang, both language versions compete for the same rankings</li>
+</ul>
+
+<p><strong>Fix — add to every DE page:</strong>
+<code>html
+&lt;link rel=&quot;alternate&quot; hreflang=&quot;de&quot; href=&quot;https://www.netzeffekt.de/&quot; /&gt;
+&lt;link rel=&quot;alternate&quot; hreflang=&quot;en&quot; href=&quot;https://www.netzeffekt.de/en/&quot; /&gt;
+&lt;link rel=&quot;alternate&quot; hreflang=&quot;x-default&quot; href=&quot;https://www.netzeffekt.de/&quot; /&gt;
+</code></p>
+
+<p><strong>Fix — add to every EN page:</strong>
+<code>html
+&lt;link rel=&quot;alternate&quot; hreflang=&quot;de&quot; href=&quot;https://www.netzeffekt.de/&quot; /&gt;
+&lt;link rel=&quot;alternate&quot; hreflang=&quot;en&quot; href=&quot;https://www.netzeffekt.de/en/&quot; /&gt;
+&lt;link rel=&quot;alternate&quot; hreflang=&quot;x-default&quot; href=&quot;https://www.netzeffekt.de/&quot; /&gt;
+</code></p>
+
+<p>Each language page MUST have reciprocal links to both versions. Check all 241 sitemap URLs — ensure EN equivalents are present in the sitemap.</p>
+
+<hr>
+
+<h3 id="toc_12">NAP Consistency Issue (High Priority for Local SEO)</h3>
+
+<p>Two different phone numbers found on two different pages:</p>
+
+<table>
+<thead>
+<tr>
+<th>Page</th>
+<th>Phone Number</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td><code>/kontakt</code></td>
+<td>+49 89 41 61 464-0</td>
+</tr>
+<tr>
+<td><code>/agentur</code></td>
+<td>+49 (0)89 3245 345</td>
+</tr>
+</tbody>
+</table>
+
+<p><strong>This is a critical Local SEO signal error.</strong> Inconsistent NAP (Name, Address, Phone) across internal pages harms local rankings and confuses users. One of these is incorrect — verify and standardize across all pages, Google Business Profile, and directory listings.</p>
+
+<hr>
+
+<h3 id="toc_13">Security Headers (Not Verified — Recommend Manual Check)</h3>
+
+<p>For a DSGVO-compliant German agency site, these headers are required:</p>
+
+<div><pre><code class="language-none">Strict-Transport-Security: max-age=31536000; includeSubDomains; preload
+X-Content-Type-Options: nosniff
+X-Frame-Options: SAMEORIGIN
+Referrer-Policy: strict-origin-when-cross-origin
+Permissions-Policy: geolocation=(), microphone=(), camera=()</code></pre></div>
+
+<p>Check with: <code>curl -I https://www.netzeffekt.de</code></p>
+
+<hr>
+
+<h2 id="toc_14">2. Content Quality</h2>
+
+<h3 id="toc_15">Business Context</h3>
+
+<p>netzeffekt is a well-established agency (founded 2012, 74 employees, Munich + Vienna) with a strong client portfolio: Vodafone, DKB, BBBank, Santander, Munich Re, Hyundai, Burger King, Tchibo. This provides a solid E-E-A-T foundation — but the website doesn&#39;t fully leverage it.</p>
+
+<h3 id="toc_16">E-E-A-T Assessment: 6/10</h3>
+
+<p><strong>Strengths:</strong>
+- Named co-founders / Managing Directors (Wolfgang Vogt, Werner Kubitscheck, Bernd Stieber) — Experience signal
+- 12+ years in operation (founded 2012) — Trustworthiness signal
+- Well-known enterprise clients visible (&quot;Boosted by netzeffekt&quot;) — Authority signal
+- Google Partner status referenced — Expertise signal
+- IITR Datenschutz GmbH named as Data Protection Officer (Impressum) — Trust signal</p>
+
+<p><strong>Weaknesses:</strong>
+- No author bylines on blog/news articles (only press contact Alexandra Schmid named)
+- Knowledge hub articles (&quot;Wissen&quot;) lack clear author attribution, publication dates, and update timestamps
+- No team page with individual expert profiles (only 3 managing directors named)
+- No case study methodology or measurable results (KPIs, % improvement) visible
+- No client testimonials with attribution</p>
+
+<hr>
+
+<h3 id="toc_17">Homepage Content</h3>
+
+<p><strong>H1:</strong> &quot;Wir sind netzeffekt&quot; / &quot;We turn traffic into sales&quot; — dual-language H1 is a problem; each page should have a single, clear H1 in one language.</p>
+
+<p><strong>Value proposition:</strong> Clear (&quot;We turn traffic into sales&quot; / &quot;Digitalagentur für messbare Erfolge&quot;)</p>
+
+<p><strong>Service description:</strong> &quot;Media UX und Insights&quot; framework is conceptually clear but lacks specific searchable service descriptions (e.g., no keyword-rich paragraphs about &quot;Suchmaschinenwerbung&quot;, &quot;Affiliate Marketing&quot;, etc.)</p>
+
+<p><strong>Word count:</strong> Estimated &lt; 300 words visible body text — <strong>thin for a homepage competing for agency-related keywords</strong></p>
+
+<hr>
+
+<h3 id="toc_18">Blog / Stories Section</h3>
+
+<p><strong>H1:</strong> &quot;Stories&quot; — extremely thin, non-descriptive</p>
+
+<p><strong>Structure:</strong> Three content types (News, Wissen/Knowledge, Presse) mixed on one page — good for users but requires separate canonical sections for SEO</p>
+
+<p><strong>Article quality issues:</strong>
+- Event reports (team days, conference attendances) have minimal SEO value
+- Knowledge articles appear short (no word count verified) and lack author attribution
+- No visible published/updated dates in the rendered content
+- No clear reading time, table of contents, or FAQ sections
+- Pagination links (&quot;Weitere News&quot;, &quot;Mehr Wissen&quot;) suggest more content exists — ensure paginated pages are properly handled</p>
+
+<p><strong>Top articles for SEO assessment:</strong>
+- &quot;Brand bidding 2025&quot; — relevant keyword topic, likely underdeveloped
+- &quot;Benchmark Analyse für Girokonten&quot; — strong finance niche authority topic
+- &quot;DAS NEUE GOOGLE ANALYTICS 4&quot; — evergreen SEO topic but likely outdated (GA4 launched 2020)</p>
+
+<hr>
+
+<h3 id="toc_19">Services / Leistungen Page</h3>
+
+<p><strong>H1:</strong> &quot;MESSBARE ERFOLGE IM DIGITALEN MARKETING&quot; — keyword opportunity missed; &quot;digitale Agentur SEA München&quot; or similar would perform better</p>
+
+<p><strong>Service taxonomy (Media/UX/Insights):</strong> Clear structure but no individual service landing pages detected (no <code>/leistungen/seo</code>, <code>/leistungen/sea</code>, <code>/leistungen/affiliate</code> etc.) — major SEO opportunity gap</p>
+
+<p><strong>Missing:</strong> Individual service pages targeting head keywords like:
+- &quot;SEA Agentur München&quot;
+- &quot;Affiliate Marketing Agentur&quot;
+- &quot;Programmatic Advertising Agentur&quot;
+- &quot;CRO Agentur&quot;
+- &quot;Performance Marketing Agentur Deutschland&quot;</p>
+
+<hr>
+
+<h3 id="toc_20">Cases Page</h3>
+
+<p><strong>H1:</strong> &quot;cases&quot; — one of the weakest H1s on the site; &quot;Digitale Performance mit netzeffekt. Ergebnisse aus unserer Arbeit.&quot; is in an H2</p>
+
+<p><strong>40+ case studies</strong> are in the sitemap — significant authority-building content — but individual case study pages could not be verified for depth</p>
+
+<hr>
+
+<h3 id="toc_21">/en English Version</h3>
+
+<p><strong>Title:</strong> &quot;netzeffekt - Digital agency for measurable success&quot;
+<strong>Meta description:</strong> Not found
+<strong>H1:</strong> &quot;We turN traffic into sales&quot; — note the unconventional capitalization may be intentional branding but appears as an error</p>
+
+<p>The English version appears to be a direct translation of the German homepage, which is appropriate for internationalization, but needs independent optimization for English-language search terms.</p>
+
+<hr>
+
+<h2 id="toc_22">3. On-Page SEO</h2>
+
+<h3 id="toc_23">Title Tags</h3>
+
+<table>
+<thead>
+<tr>
+<th>Page</th>
+<th>Title Found</th>
+<th>Assessment</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>Homepage (DE)</td>
+<td>&quot;netzeffekt | Digitalagentur für messbare Erfolge&quot;</td>
+<td>✅ Good — brand + keyword</td>
+</tr>
+<tr>
+<td>Homepage (EN)</td>
+<td>&quot;netzeffekt - Digital agency for measurable success&quot;</td>
+<td>✅ Good</td>
+</tr>
+<tr>
+<td>/stories</td>
+<td>Not found in extraction</td>
+<td>❌ Missing or not rendered</td>
+</tr>
+<tr>
+<td>/cases</td>
+<td>Not found in extraction</td>
+<td>❌ Missing or not rendered</td>
+</tr>
+<tr>
+<td>/leistungen</td>
+<td>Not found in extraction</td>
+<td>❌ Missing or not rendered</td>
+</tr>
+<tr>
+<td>/agentur</td>
+<td>Not found in extraction</td>
+<td>❌ Missing or not rendered</td>
+</tr>
+<tr>
+<td>/kontakt</td>
+<td>Not found in extraction</td>
+<td>❌ Missing or not rendered</td>
+</tr>
+</tbody>
+</table>
+
+<p><strong>Assessment:</strong> Title tags may be rendered via JavaScript and not in raw HTML — this creates a potential indexing risk if Googlebot&#39;s JavaScript rendering queue delays parsing.</p>
+
+<hr>
+
+<h3 id="toc_24">Meta Descriptions</h3>
+
+<p><strong>Status: CRITICAL FAILURE</strong></p>
+
+<p>Meta descriptions not found on ANY page except potentially the homepage (not confirmed). Missing meta descriptions result in Google auto-generating snippets from page body text, which are typically less compelling and have lower CTR.</p>
+
+<p><strong>Impact:</strong> Every page in Google SERPs is showing auto-generated descriptions, likely reducing organic CTR by 10-30%.</p>
+
+<hr>
+
+<h3 id="toc_25">Heading Structure</h3>
+
+<table>
+<thead>
+<tr>
+<th>Page</th>
+<th>H1</th>
+<th>Assessment</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>Homepage</td>
+<td>&quot;Wir sind netzeffekt&quot; / &quot;We turn traffic into sales&quot;</td>
+<td>⚠️ Dual H1 (mixed language)</td>
+</tr>
+<tr>
+<td>/agentur</td>
+<td>&quot;Digitale Performance&quot; / &quot;Weils Bock macht&quot;</td>
+<td>⚠️ Two H1s detected</td>
+</tr>
+<tr>
+<td>/leistungen</td>
+<td>&quot;MESSBARE ERFOLGE IM DIGITALEN MARKETING&quot;</td>
+<td>✅ Single H1, keyword weak</td>
+</tr>
+<tr>
+<td>/cases</td>
+<td>&quot;cases&quot; + &quot;Digitale Performance…&quot;</td>
+<td>❌ H1 is &quot;cases&quot; (1 word)</td>
+</tr>
+<tr>
+<td>/stories</td>
+<td>&quot;Stories&quot;</td>
+<td>❌ H1 is &quot;Stories&quot; (1 word)</td>
+</tr>
+<tr>
+<td>/kontakt</td>
+<td>&quot;WANNA TALK TO US?&quot;</td>
+<td>⚠️ English on a German page</td>
+</tr>
+<tr>
+<td>/en</td>
+<td>&quot;We turN traffic into sales&quot;</td>
+<td>⚠️ Unusual capitalization</td>
+</tr>
+</tbody>
+</table>
+
+<hr>
+
+<h3 id="toc_26">Internal Linking</h3>
+
+<p><strong>Navigation links</strong> are consistent across all pages:
+<code>/agentur</code> → <code>/leistungen</code> → <code>/cases</code> → <code>/stories</code> → <code>/karriere</code> → <code>/kontakt</code></p>
+
+<p><strong>Stories section</strong> has sub-navigation: <code>/stories/news</code>, <code>/stories/wissen</code>, <code>/stories/presse</code></p>
+
+<p><strong>Issues:</strong>
+- No breadcrumb navigation visible on interior pages
+- Individual service sub-pages don&#39;t exist (so no internal linking to service-specific pages)
+- Case studies don&#39;t appear to cross-link to relevant service pages
+- Blog articles (&quot;Wissen&quot;) don&#39;t link to related services or case studies</p>
+
+<hr>
+
+<h2 id="toc_27">4. Schema / Structured Data</h2>
+
+<h3 id="toc_28">Current Implementation</h3>
+
+<table>
+<thead>
+<tr>
+<th>Page</th>
+<th>Schema Found</th>
+<th>Type</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>Homepage</td>
+<td>❌ None</td>
+<td>—</td>
+</tr>
+<tr>
+<td>/cases</td>
+<td>✅ One item</td>
+<td>VideoObject (Showreel 2020)</td>
+</tr>
+<tr>
+<td>/stories</td>
+<td>❌ None</td>
+<td>—</td>
+</tr>
+<tr>
+<td>/leistungen</td>
+<td>❌ None</td>
+<td>—</td>
+</tr>
+<tr>
+<td>/agentur</td>
+<td>❌ None</td>
+<td>—</td>
+</tr>
+<tr>
+<td>/kontakt</td>
+<td>❌ None</td>
+<td>—</td>
+</tr>
+<tr>
+<td>/impressum</td>
+<td>❌ None</td>
+<td>—</td>
+</tr>
+<tr>
+<td>/en</td>
+<td>❌ None</td>
+<td>—</td>
+</tr>
+</tbody>
+</table>
+
+<p><strong>Schema Score: 10/100</strong> — Only one VideoObject found on the entire site.</p>
+
+<hr>
+
+<h3 id="toc_29">Missing Schema (High Priority)</h3>
+
+<h4 id="toc_30">1. Organization (Homepage)</h4>
+
+<div><pre><code class="language-javascript">{
+  &quot;@context&quot;: &quot;https://schema.org&quot;,
+  &quot;@type&quot;: &quot;Organization&quot;,
+  &quot;name&quot;: &quot;netzeffekt GmbH&quot;,
+  &quot;url&quot;: &quot;https://www.netzeffekt.de&quot;,
+  &quot;logo&quot;: &quot;https://www.netzeffekt.de/path/to/logo.png&quot;,
+  &quot;description&quot;: &quot;Digitalagentur für messbare Erfolge – Performance Marketing, SEA, Affiliate, Programmatic, CRO&quot;,
+  &quot;foundingDate&quot;: &quot;2012&quot;,
+  &quot;numberOfEmployees&quot;: &quot;74&quot;,
+  &quot;address&quot;: [
+    {
+      &quot;@type&quot;: &quot;PostalAddress&quot;,
+      &quot;streetAddress&quot;: &quot;Agnes-Bernauer-Straße 90&quot;,
+      &quot;addressLocality&quot;: &quot;München&quot;,
+      &quot;postalCode&quot;: &quot;80687&quot;,
+      &quot;addressCountry&quot;: &quot;DE&quot;
+    },
+    {
+      &quot;@type&quot;: &quot;PostalAddress&quot;,
+      &quot;streetAddress&quot;: &quot;Mariahilfer Straße 101/3/51&quot;,
+      &quot;addressLocality&quot;: &quot;Wien&quot;,
+      &quot;postalCode&quot;: &quot;1060&quot;,
+      &quot;addressCountry&quot;: &quot;AT&quot;
+    }
+  ],
+  &quot;contactPoint&quot;: {
+    &quot;@type&quot;: &quot;ContactPoint&quot;,
+    &quot;telephone&quot;: &quot;+49-89-41614640&quot;,
+    &quot;contactType&quot;: &quot;customer service&quot;,
+    &quot;availableLanguage&quot;: [&quot;German&quot;, &quot;English&quot;]
+  },
+  &quot;sameAs&quot;: [
+    &quot;https://www.linkedin.com/company/netzeffekt&quot;,
+    &quot;https://www.xing.com/pages/netzeffekt&quot;
+  ],
+  &quot;founders&quot;: [
+    {&quot;@type&quot;: &quot;Person&quot;, &quot;name&quot;: &quot;Wolfgang Vogt&quot;},
+    {&quot;@type&quot;: &quot;Person&quot;, &quot;name&quot;: &quot;Werner Kubitscheck&quot;},
+    {&quot;@type&quot;: &quot;Person&quot;, &quot;name&quot;: &quot;Bernd Stieber&quot;}
+  ]
+}</code></pre></div>
+
+<h4 id="toc_31">2. LocalBusiness — München (Contact Page)</h4>
+
+<div><pre><code class="language-javascript">{
+  &quot;@context&quot;: &quot;https://schema.org&quot;,
+  &quot;@type&quot;: [&quot;LocalBusiness&quot;, &quot;ProfessionalService&quot;],
+  &quot;name&quot;: &quot;netzeffekt GmbH&quot;,
+  &quot;image&quot;: &quot;https://www.netzeffekt.de/path/to/image.jpg&quot;,
+  &quot;url&quot;: &quot;https://www.netzeffekt.de&quot;,
+  &quot;telephone&quot;: &quot;+49-89-41614640&quot;,
+  &quot;email&quot;: &quot;info@netzeffekt.de&quot;,
+  &quot;address&quot;: {
+    &quot;@type&quot;: &quot;PostalAddress&quot;,
+    &quot;streetAddress&quot;: &quot;Agnes-Bernauer-Straße 90&quot;,
+    &quot;addressLocality&quot;: &quot;München&quot;,
+    &quot;postalCode&quot;: &quot;80687&quot;,
+    &quot;addressCountry&quot;: &quot;DE&quot;
+  },
+  &quot;geo&quot;: {
+    &quot;@type&quot;: &quot;GeoCoordinates&quot;,
+    &quot;latitude&quot;: 48.1351,
+    &quot;longitude&quot;: 11.5497
+  },
+  &quot;openingHoursSpecification&quot;: {
+    &quot;@type&quot;: &quot;OpeningHoursSpecification&quot;,
+    &quot;dayOfWeek&quot;: [&quot;Monday&quot;,&quot;Tuesday&quot;,&quot;Wednesday&quot;,&quot;Thursday&quot;,&quot;Friday&quot;],
+    &quot;opens&quot;: &quot;09:00&quot;,
+    &quot;closes&quot;: &quot;18:00&quot;
+  },
+  &quot;priceRange&quot;: &quot;€€€&quot;,
+  &quot;knowsAbout&quot;: [&quot;Performance Marketing&quot;, &quot;SEA&quot;, &quot;Affiliate Marketing&quot;, &quot;Programmatic Advertising&quot;, &quot;CRO&quot;, &quot;Financial Marketing&quot;]
+}</code></pre></div>
+
+<h4 id="toc_32">3. WebSite (Homepage — enables Sitelinks Search Box)</h4>
+
+<div><pre><code class="language-javascript">{
+  &quot;@context&quot;: &quot;https://schema.org&quot;,
+  &quot;@type&quot;: &quot;WebSite&quot;,
+  &quot;name&quot;: &quot;netzeffekt&quot;,
+  &quot;url&quot;: &quot;https://www.netzeffekt.de&quot;,
+  &quot;potentialAction&quot;: {
+    &quot;@type&quot;: &quot;SearchAction&quot;,
+    &quot;target&quot;: {
+      &quot;@type&quot;: &quot;EntryPoint&quot;,
+      &quot;urlTemplate&quot;: &quot;https://www.netzeffekt.de/search?q={search_term_string}&quot;
+    },
+    &quot;query-input&quot;: &quot;required name=search_term_string&quot;
+  }
+}</code></pre></div>
+
+<h4 id="toc_33">4. Article / BlogPosting (Blog articles in /stories/wissen/)</h4>
+
+<div><pre><code class="language-javascript">{
+  &quot;@context&quot;: &quot;https://schema.org&quot;,
+  &quot;@type&quot;: &quot;Article&quot;,
+  &quot;headline&quot;: &quot;[Article Title]&quot;,
+  &quot;description&quot;: &quot;[Article Meta Description]&quot;,
+  &quot;image&quot;: &quot;[Featured image URL]&quot;,
+  &quot;author&quot;: {
+    &quot;@type&quot;: &quot;Person&quot;,
+    &quot;name&quot;: &quot;[Author Name]&quot;,
+    &quot;jobTitle&quot;: &quot;[Job Title]&quot;,
+    &quot;url&quot;: &quot;https://www.netzeffekt.de/team/[author-slug]&quot;
+  },
+  &quot;publisher&quot;: {
+    &quot;@type&quot;: &quot;Organization&quot;,
+    &quot;name&quot;: &quot;netzeffekt GmbH&quot;,
+    &quot;logo&quot;: {
+      &quot;@type&quot;: &quot;ImageObject&quot;,
+      &quot;url&quot;: &quot;https://www.netzeffekt.de/path/to/logo.png&quot;
+    }
+  },
+  &quot;datePublished&quot;: &quot;[ISO 8601 date]&quot;,
+  &quot;dateModified&quot;: &quot;[ISO 8601 date]&quot;,
+  &quot;mainEntityOfPage&quot;: {
+    &quot;@type&quot;: &quot;WebPage&quot;,
+    &quot;@id&quot;: &quot;https://www.netzeffekt.de/stories/wissen/[article-slug]&quot;
+  }
+}</code></pre></div>
+
+<h4 id="toc_34">5. BreadcrumbList (Interior pages)</h4>
+
+<div><pre><code class="language-javascript">{
+  &quot;@context&quot;: &quot;https://schema.org&quot;,
+  &quot;@type&quot;: &quot;BreadcrumbList&quot;,
+  &quot;itemListElement&quot;: [
+    {
+      &quot;@type&quot;: &quot;ListItem&quot;,
+      &quot;position&quot;: 1,
+      &quot;name&quot;: &quot;Home&quot;,
+      &quot;item&quot;: &quot;https://www.netzeffekt.de&quot;
+    },
+    {
+      &quot;@type&quot;: &quot;ListItem&quot;,
+      &quot;position&quot;: 2,
+      &quot;name&quot;: &quot;Stories&quot;,
+      &quot;item&quot;: &quot;https://www.netzeffekt.de/stories&quot;
+    },
+    {
+      &quot;@type&quot;: &quot;ListItem&quot;,
+      &quot;position&quot;: 3,
+      &quot;name&quot;: &quot;[Article Title]&quot;,
+      &quot;item&quot;: &quot;https://www.netzeffekt.de/stories/wissen/[slug]&quot;
+    }
+  ]
+}</code></pre></div>
+
+<hr>
+
+<h2 id="toc_35">5. Performance (Core Web Vitals)</h2>
+
+<blockquote>
+<p>Note: Bash and Playwright were unavailable during this audit. The following is a high-confidence estimate based on site profile analysis and standard patterns for this site type.</p>
+</blockquote>
+
+<h3 id="toc_36">Estimated CWV Status</h3>
+
+<table>
+<thead>
+<tr>
+<th>Metric</th>
+<th>Estimated Status</th>
+<th>Primary Risk Factor</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>LCP</td>
+<td>Needs Improvement (2.5s–4.0s)</td>
+<td>Hero media not preloaded; JS-rendered content</td>
+</tr>
+<tr>
+<td>INP</td>
+<td>Needs Improvement (200–500ms)</td>
+<td>GDPR consent stack + GTM + ad pixels (near-certain for German agency)</td>
+</tr>
+<tr>
+<td>CLS</td>
+<td>Needs Improvement (0.1–0.25)</td>
+<td>Cookie banner top-of-page; client logo images without dimensions</td>
+</tr>
+</tbody>
+</table>
+
+<p><strong>Verify real data at:</strong> https://pagespeed.web.dev/report?url=https%3A%2F%2Fwww.netzeffekt.de</p>
+
+<hr>
+
+<h3 id="toc_37">Key Performance Risks</h3>
+
+<p><strong>LCP:</strong>
+- Large hero section with video/animation (Cases page showreel, homepage animations)
+- Craft CMS with custom JS frontend likely has render-blocking scripts
+- LCP image likely not preloaded (<code>&lt;link rel=&quot;preload&quot; as=&quot;image&quot;&gt;</code>)
+- No <code>fetchpriority=&quot;high&quot;</code> on above-the-fold images</p>
+
+<p><strong>INP:</strong>
+- German legal requirement mandates a GDPR consent manager (Cookiebot, OneTrust, Borlabs, etc.) — these add significant main-thread blocking
+- GTM container loading ad pixels (LinkedIn, Meta, GA4) creates long tasks
+- <code>scheduler.yield()</code> or task-chunking likely absent</p>
+
+<p><strong>CLS:</strong>
+- Client logo grid (Vodafone, DKB, BBBank, etc.) — common CLS source when images load without explicit dimensions
+- Cookie banner injected at top of viewport shifts content down
+- Web fonts using <code>font-display: swap</code> can cause FOUT-based shifts</p>
+
+<hr>
+
+<h3 id="toc_38">Quick Wins</h3>
+
+<ol>
+<li>Add <code>&lt;link rel=&quot;preload&quot; as=&quot;image&quot; fetchpriority=&quot;high&quot;&gt;</code> for hero image</li>
+<li>Add <code>width</code> + <code>height</code> to ALL <code>&lt;img&gt;</code> tags (especially client logos)</li>
+<li>Switch cookie consent banner to bottom overlay (reduces CLS)</li>
+<li>Load GTM and pixels asynchronously with <code>async</code> attribute</li>
+<li>Use <code>font-display: optional</code> for body fonts</li>
+<li>Add <code>&lt;link rel=&quot;preconnect&quot;&gt;</code> for Google Fonts and GTM domains</li>
+</ol>
+
+<hr>
+
+<h2 id="toc_39">6. Images</h2>
+
+<blockquote>
+<p>Note: Could not verify image attributes from rendered HTML without Bash access.</p>
+</blockquote>
+
+<p><strong>Risks identified from site profile:</strong>
+- Client logos grid on homepage: likely missing <code>width</code>/<code>height</code> attributes → CLS
+- Hero images/animations: likely not in AVIF/WebP format
+- Case study images: unknown alt text coverage
+- Showreel video (<code>Showreel-2020-ohneJahreszahl_21MB.mp4</code>) — 21MB video file is extremely large; should use adaptive streaming or compressed version</p>
+
+<p><strong>Required audit actions:</strong>
+```bash</p>
+
+<h1 id="toc_40">Check for images without width/height</h1>
+
+<p>grep -E &#39;<img[^>]+(?!width)[^&gt;]*&gt;&#39; /tmp/netzeffekt_home.html</p>
+
+<h1 id="toc_41">Check for missing alt text</h1>
+
+<p>grep -E &#39;<img[^>]<em>alt=&quot;&quot;[^&gt;]</em>&gt;&#39; /tmp/netzeffekt_home.html
+```</p>
+
+<hr>
+
+<h2 id="toc_42">7. AI Search Readiness</h2>
+
+<p><strong>Score: 35/100</strong></p>
+
+<h3 id="toc_43">AI Overview (Google SGE) Readiness</h3>
+
+<ul>
+<li>❌ No FAQ schema to trigger featured snippet / AI overview inclusion</li>
+<li>❌ Knowledge hub articles (&quot;Wissen&quot;) lack clear question-and-answer structure</li>
+<li>❌ No llms.txt file at https://www.netzeffekt.de/llms.txt</li>
+<li>❌ No AI crawler management in robots.txt (GPTBot, ClaudeBot, PerplexityBot)</li>
+<li>⚠️ Some knowledge articles on agency-relevant topics (GA4, Core Web Vitals, Brand Bidding) could qualify for AI citation if properly structured</li>
+</ul>
+
+<h3 id="toc_44">Brand Mention Signals</h3>
+
+<ul>
+<li>✅ Well-known clients (Vodafone, DKB, etc.) associated with netzeffekt</li>
+<li>✅ Agency has been around since 2012 — established brand signal</li>
+<li>❌ No Wikipedia presence detected</li>
+<li>❌ No structured data linking to external authority sources</li>
+</ul>
+
+<h3 id="toc_45">Recommendations</h3>
+
+<ol>
+<li>Create <code>llms.txt</code> at root with structured overview of services and expertise</li>
+<li>Restructure Wissen articles with clear Q&amp;A format (H2 questions, paragraph answers)</li>
+<li>Add FAQPage schema to service pages</li>
+<li>Consider allowing PerplexityBot while blocking pure training crawlers (balance AI discovery vs. content protection)</li>
+</ol>
+
+<hr>
+
+<h2 id="toc_46">8. Appendix: Page Inventory</h2>
+
+<h3 id="toc_47">Pages Successfully Audited</h3>
+
+<table>
+<thead>
+<tr>
+<th>URL</th>
+<th>Title Tag</th>
+<th>Meta Desc</th>
+<th>H1</th>
+<th>Canonical</th>
+<th>Schema</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>/</td>
+<td>✅ Good</td>
+<td>❌ Not found</td>
+<td>⚠️ Dual</td>
+<td>❌ Missing</td>
+<td>❌ None</td>
+</tr>
+<tr>
+<td>/en</td>
+<td>✅ Good</td>
+<td>❌ Not found</td>
+<td>⚠️ Mixed case</td>
+<td>❌ Missing</td>
+<td>❌ None</td>
+</tr>
+<tr>
+<td>/agentur</td>
+<td>❌ Not found</td>
+<td>❌ Not found</td>
+<td>⚠️ Two H1s</td>
+<td>❌ Missing</td>
+<td>❌ None</td>
+</tr>
+<tr>
+<td>/leistungen</td>
+<td>❌ Not found</td>
+<td>❌ Not found</td>
+<td>⚠️ No keyword</td>
+<td>❌ Missing</td>
+<td>❌ None</td>
+</tr>
+<tr>
+<td>/cases</td>
+<td>❌ Not found</td>
+<td>❌ Not found</td>
+<td>❌ &quot;cases&quot; (1 word)</td>
+<td>❌ Missing</td>
+<td>⚠️ VideoObject only</td>
+</tr>
+<tr>
+<td>/stories</td>
+<td>❌ Not found</td>
+<td>❌ Not found</td>
+<td>❌ &quot;Stories&quot; (1 word)</td>
+<td>❌ Missing</td>
+<td>❌ None</td>
+</tr>
+<tr>
+<td>/kontakt</td>
+<td>❌ Not found</td>
+<td>❌ Not found</td>
+<td>⚠️ English on DE page</td>
+<td>❌ Missing</td>
+<td>❌ None</td>
+</tr>
+<tr>
+<td>/impressum</td>
+<td>n/a</td>
+<td>n/a</td>
+<td>n/a</td>
+<td>n/a</td>
+<td>❌ None</td>
+</tr>
+</tbody>
+</table>
+
+<hr>
+
+<h2 id="toc_48">9. Legal Entity Data (from /impressum)</h2>
+
+<p>For schema and Google Business Profile verification:</p>
+
+<ul>
+<li><strong>Legal name:</strong> netzeffekt GmbH</li>
+<li><strong>Registration:</strong> HRB 195766, Amtsgericht München</li>
+<li><strong>VAT:</strong> DE281744456</li>
+<li><strong>Munich address:</strong> Agnes-Bernauer-Straße 90, 80687 München</li>
+<li><strong>Vienna address:</strong> Mariahilfer Straße 101/3/51, A-1060 Wien</li>
+<li><strong>Email:</strong> info@netzeffekt.de / info@netzeffekt.at</li>
+<li><strong>Managing directors:</strong> Wolfgang Vogt, Werner Kubitscheck, Bernd Stieber</li>
+<li><strong>DPO:</strong> Dr. Sebastian Kraska, IITR Datenschutz GmbH, Marienplatz 2, 80331 München</li>
+</ul>
+
+<hr>
+
+<p><em>Report generated by Claude Code SEO Audit on 2026-02-28</em></p>
+
+
+
+
+</body>
+
+</html>

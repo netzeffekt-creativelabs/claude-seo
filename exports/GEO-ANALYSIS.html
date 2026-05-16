@@ -1,0 +1,1183 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+<title>GEO-ANALYSIS</title>
+
+
+<style type="text/css">
+body {
+  font-family: Helvetica, arial, sans-serif;
+  font-size: 14px;
+  line-height: 1.6;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  background-color: white;
+  padding: 30px; }
+
+body > *:first-child {
+  margin-top: 0 !important; }
+body > *:last-child {
+  margin-bottom: 0 !important; }
+
+a {
+  color: #4183C4; }
+a.absent {
+  color: #cc0000; }
+a.anchor {
+  display: block;
+  padding-left: 30px;
+  margin-left: -30px;
+  cursor: pointer;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0; }
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 20px 0 10px;
+  padding: 0;
+  font-weight: bold;
+  -webkit-font-smoothing: antialiased;
+  cursor: text;
+  position: relative; }
+
+h1:hover a.anchor, h2:hover a.anchor, h3:hover a.anchor, h4:hover a.anchor, h5:hover a.anchor, h6:hover a.anchor {
+  background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA09pVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNiAoMTMuMCAyMDEyMDMwNS5tLjQxNSAyMDEyLzAzLzA1OjIxOjAwOjAwKSAgKE1hY2ludG9zaCkiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6OUM2NjlDQjI4ODBGMTFFMTg1ODlEODNERDJBRjUwQTQiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6OUM2NjlDQjM4ODBGMTFFMTg1ODlEODNERDJBRjUwQTQiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDo5QzY2OUNCMDg4MEYxMUUxODU4OUQ4M0REMkFGNTBBNCIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDo5QzY2OUNCMTg4MEYxMUUxODU4OUQ4M0REMkFGNTBBNCIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PsQhXeAAAABfSURBVHjaYvz//z8DJYCRUgMYQAbAMBQIAvEqkBQWXI6sHqwHiwG70TTBxGaiWwjCTGgOUgJiF1J8wMRAIUA34B4Q76HUBelAfJYSA0CuMIEaRP8wGIkGMA54bgQIMACAmkXJi0hKJQAAAABJRU5ErkJggg==) no-repeat 10px center;
+  text-decoration: none; }
+
+h1 tt, h1 code {
+  font-size: inherit; }
+
+h2 tt, h2 code {
+  font-size: inherit; }
+
+h3 tt, h3 code {
+  font-size: inherit; }
+
+h4 tt, h4 code {
+  font-size: inherit; }
+
+h5 tt, h5 code {
+  font-size: inherit; }
+
+h6 tt, h6 code {
+  font-size: inherit; }
+
+h1 {
+  font-size: 28px;
+  color: black; }
+
+h2 {
+  font-size: 24px;
+  border-bottom: 1px solid #cccccc;
+  color: black; }
+
+h3 {
+  font-size: 18px; }
+
+h4 {
+  font-size: 16px; }
+
+h5 {
+  font-size: 14px; }
+
+h6 {
+  color: #777777;
+  font-size: 14px; }
+
+p, blockquote, ul, ol, dl, li, table, pre {
+  margin: 15px 0; }
+
+hr {
+  background: transparent url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAYAAAAECAYAAACtBE5DAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyJpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNSBNYWNpbnRvc2giIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6OENDRjNBN0E2NTZBMTFFMEI3QjRBODM4NzJDMjlGNDgiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6OENDRjNBN0I2NTZBMTFFMEI3QjRBODM4NzJDMjlGNDgiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDo4Q0NGM0E3ODY1NkExMUUwQjdCNEE4Mzg3MkMyOUY0OCIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDo4Q0NGM0E3OTY1NkExMUUwQjdCNEE4Mzg3MkMyOUY0OCIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PqqezsUAAAAfSURBVHjaYmRABcYwBiM2QSA4y4hNEKYDQxAEAAIMAHNGAzhkPOlYAAAAAElFTkSuQmCC) repeat-x 0 0;
+  border: 0 none;
+  color: #cccccc;
+  height: 4px;
+  padding: 0;
+}
+
+body > h2:first-child {
+  margin-top: 0;
+  padding-top: 0; }
+body > h1:first-child {
+  margin-top: 0;
+  padding-top: 0; }
+  body > h1:first-child + h2 {
+    margin-top: 0;
+    padding-top: 0; }
+body > h3:first-child, body > h4:first-child, body > h5:first-child, body > h6:first-child {
+  margin-top: 0;
+  padding-top: 0; }
+
+a:first-child h1, a:first-child h2, a:first-child h3, a:first-child h4, a:first-child h5, a:first-child h6 {
+  margin-top: 0;
+  padding-top: 0; }
+
+h1 p, h2 p, h3 p, h4 p, h5 p, h6 p {
+  margin-top: 0; }
+
+li p.first {
+  display: inline-block; }
+li {
+  margin: 0; }
+ul, ol {
+  padding-left: 30px; }
+
+ul :first-child, ol :first-child {
+  margin-top: 0; }
+
+dl {
+  padding: 0; }
+  dl dt {
+    font-size: 14px;
+    font-weight: bold;
+    font-style: italic;
+    padding: 0;
+    margin: 15px 0 5px; }
+    dl dt:first-child {
+      padding: 0; }
+    dl dt > :first-child {
+      margin-top: 0; }
+    dl dt > :last-child {
+      margin-bottom: 0; }
+  dl dd {
+    margin: 0 0 15px;
+    padding: 0 15px; }
+    dl dd > :first-child {
+      margin-top: 0; }
+    dl dd > :last-child {
+      margin-bottom: 0; }
+
+blockquote {
+  border-left: 4px solid #dddddd;
+  padding: 0 15px;
+  color: #777777; }
+  blockquote > :first-child {
+    margin-top: 0; }
+  blockquote > :last-child {
+    margin-bottom: 0; }
+
+table {
+  padding: 0;border-collapse: collapse; }
+  table tr {
+    border-top: 1px solid #cccccc;
+    background-color: white;
+    margin: 0;
+    padding: 0; }
+    table tr:nth-child(2n) {
+      background-color: #f8f8f8; }
+    table tr th {
+      font-weight: bold;
+      border: 1px solid #cccccc;
+      margin: 0;
+      padding: 6px 13px; }
+    table tr td {
+      border: 1px solid #cccccc;
+      margin: 0;
+      padding: 6px 13px; }
+    table tr th :first-child, table tr td :first-child {
+      margin-top: 0; }
+    table tr th :last-child, table tr td :last-child {
+      margin-bottom: 0; }
+
+img {
+  max-width: 100%; }
+
+span.frame {
+  display: block;
+  overflow: hidden; }
+  span.frame > span {
+    border: 1px solid #dddddd;
+    display: block;
+    float: left;
+    overflow: hidden;
+    margin: 13px 0 0;
+    padding: 7px;
+    width: auto; }
+  span.frame span img {
+    display: block;
+    float: left; }
+  span.frame span span {
+    clear: both;
+    color: #333333;
+    display: block;
+    padding: 5px 0 0; }
+span.align-center {
+  display: block;
+  overflow: hidden;
+  clear: both; }
+  span.align-center > span {
+    display: block;
+    overflow: hidden;
+    margin: 13px auto 0;
+    text-align: center; }
+  span.align-center span img {
+    margin: 0 auto;
+    text-align: center; }
+span.align-right {
+  display: block;
+  overflow: hidden;
+  clear: both; }
+  span.align-right > span {
+    display: block;
+    overflow: hidden;
+    margin: 13px 0 0;
+    text-align: right; }
+  span.align-right span img {
+    margin: 0;
+    text-align: right; }
+span.float-left {
+  display: block;
+  margin-right: 13px;
+  overflow: hidden;
+  float: left; }
+  span.float-left span {
+    margin: 13px 0 0; }
+span.float-right {
+  display: block;
+  margin-left: 13px;
+  overflow: hidden;
+  float: right; }
+  span.float-right > span {
+    display: block;
+    overflow: hidden;
+    margin: 13px auto 0;
+    text-align: right; }
+
+code, tt {
+  margin: 0 2px;
+  padding: 0 5px;
+  white-space: nowrap;
+  border: 1px solid #eaeaea;
+  background-color: #f8f8f8;
+  border-radius: 3px; }
+
+pre code {
+  margin: 0;
+  padding: 0;
+  white-space: pre;
+  border: none;
+  background: transparent; }
+
+.highlight pre {
+  background-color: #f8f8f8;
+  border: 1px solid #cccccc;
+  font-size: 13px;
+  line-height: 19px;
+  overflow: auto;
+  padding: 6px 10px;
+  border-radius: 3px; }
+
+pre {
+  background-color: #f8f8f8;
+  border: 1px solid #cccccc;
+  font-size: 13px;
+  line-height: 19px;
+  overflow: auto;
+  padding: 6px 10px;
+  border-radius: 3px; }
+  pre code, pre tt {
+    background-color: transparent;
+    border: none; }
+
+sup {
+    font-size: 0.83em;
+    vertical-align: super;
+    line-height: 0;
+}
+
+kbd {
+  display: inline-block;
+  padding: 3px 5px;
+  font-size: 11px;
+  line-height: 10px;
+  color: #555;
+  vertical-align: middle;
+  background-color: #fcfcfc;
+  border: solid 1px #ccc;
+  border-bottom-color: #bbb;
+  border-radius: 3px;
+  box-shadow: inset 0 -1px 0 #bbb
+}
+
+* {
+	-webkit-print-color-adjust: exact;
+}
+@media screen and (min-width: 914px) {
+    body {
+        width: 854px;
+        margin:0 auto;
+    }
+}
+@media print {
+	table, pre {
+		page-break-inside: avoid;
+	}
+	pre {
+		word-wrap: break-word;
+	}
+  body {
+    padding: 2cm; 
+  }
+}
+</style>
+
+
+</head>
+
+<body>
+
+<h1 id="toc_0">GEO Analysis — netzeffekt.de</h1>
+
+<h2 id="toc_1">Generative Engine Optimization (AI Search Readiness)</h2>
+
+<p><strong>Date:</strong> 2026-02-28
+<strong>Site:</strong> https://www.netzeffekt.de
+<strong>Analyst:</strong> Claude Code SEO Audit</p>
+
+<hr>
+
+<h2 id="toc_2">GEO Readiness Score: 40 / 100</h2>
+
+<table>
+<thead>
+<tr>
+<th>Category</th>
+<th>Score</th>
+<th>Weight</th>
+<th>Weighted</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>Passage-Level Citability</td>
+<td>38/100</td>
+<td>25%</td>
+<td>9.5</td>
+</tr>
+<tr>
+<td>Structural Readability</td>
+<td>38/100</td>
+<td>20%</td>
+<td>7.6</td>
+</tr>
+<tr>
+<td>Multi-Modal Content</td>
+<td>50/100</td>
+<td>15%</td>
+<td>7.5</td>
+</tr>
+<tr>
+<td>Authority &amp; Brand Signals</td>
+<td>45/100</td>
+<td>20%</td>
+<td>9.0</td>
+</tr>
+<tr>
+<td>Technical Accessibility</td>
+<td>30/100</td>
+<td>20%</td>
+<td>6.0</td>
+</tr>
+<tr>
+<td><strong>TOTAL</strong></td>
+<td></td>
+<td></td>
+<td><strong>39.6 → 40/100</strong></td>
+</tr>
+</tbody>
+</table>
+
+<hr>
+
+<h2 id="toc_3">Platform Breakdown</h2>
+
+<table>
+<thead>
+<tr>
+<th>Platform</th>
+<th>Score</th>
+<th>Primary Blocker</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>Google AI Overviews</td>
+<td>42/100</td>
+<td>Content too thin for most service queries; no FAQ schema</td>
+</tr>
+<tr>
+<td>ChatGPT / OpenAI</td>
+<td>22/100</td>
+<td>No Wikipedia, no Reddit/YouTube presence</td>
+</tr>
+<tr>
+<td>Perplexity</td>
+<td>28/100</td>
+<td>No Reddit mentions; only limited directory citations</td>
+</tr>
+<tr>
+<td>Bing Copilot</td>
+<td>40/100</td>
+<td>Microsoft partnership helps; no structured data</td>
+</tr>
+<tr>
+<td><strong>Combined GEO</strong></td>
+<td><strong>40/100</strong></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+
+<blockquote>
+<p><strong>Critical Insight:</strong> Brand mentions correlate 3× more strongly with AI citations than backlinks (Ahrefs Dec 2025). netzeffekt&#39;s LinkedIn and JvM affiliation are its strongest AI citation signals — but Reddit and YouTube, the two highest-correlation platforms, are completely absent.</p>
+</blockquote>
+
+<hr>
+
+<h2 id="toc_4">1. AI Crawler Access Status</h2>
+
+<h3 id="toc_5">robots.txt Analysis</h3>
+
+<div><pre><code class="language-none">User-agent: *
+Disallow:</code></pre></div>
+
+<p><strong>Status:</strong> All crawlers implicitly allowed (empty Disallow = no restrictions)</p>
+
+<table>
+<thead>
+<tr>
+<th>AI Crawler</th>
+<th>Access</th>
+<th>Recommendation</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>GPTBot (ChatGPT)</td>
+<td>✅ Allowed (implicit)</td>
+<td>Make explicit: <code>User-agent: GPTBot</code> / <code>Disallow:</code></td>
+</tr>
+<tr>
+<td>OAI-SearchBot (OpenAI Search)</td>
+<td>✅ Allowed (implicit)</td>
+<td>Explicitly allow</td>
+</tr>
+<tr>
+<td>ChatGPT-User (ChatGPT Browsing)</td>
+<td>✅ Allowed (implicit)</td>
+<td>Explicitly allow</td>
+</tr>
+<tr>
+<td>ClaudeBot (Anthropic)</td>
+<td>✅ Allowed (implicit)</td>
+<td>Explicitly allow for search</td>
+</tr>
+<tr>
+<td>PerplexityBot</td>
+<td>✅ Allowed (implicit)</td>
+<td>Explicitly allow</td>
+</tr>
+<tr>
+<td>anthropic-ai (Claude training)</td>
+<td>✅ Allowed (implicit)</td>
+<td>Block training; allow search</td>
+</tr>
+<tr>
+<td>CCBot (Common Crawl / training data)</td>
+<td>✅ Allowed (implicit)</td>
+<td><strong>Block — not relevant to AI search, exposes content IP</strong></td>
+</tr>
+<tr>
+<td>Google-Extended (Bard/Gemini training)</td>
+<td>✅ Allowed (implicit)</td>
+<td>Business decision to block or allow</td>
+</tr>
+<tr>
+<td>Bytespider (ByteDance)</td>
+<td>✅ Allowed (implicit)</td>
+<td>Block — no benefit, content IP risk</td>
+</tr>
+</tbody>
+</table>
+
+<p><strong>Recommended robots.txt update:</strong>
+```
+User-agent: *
+Disallow: /admin/
+Disallow: /cpresources/
+Disallow: /actions/</p>
+
+<h1 id="toc_6">Allow AI search crawlers explicitly</h1>
+
+<p>User-agent: GPTBot
+Disallow:</p>
+
+<p>User-agent: OAI-SearchBot
+Disallow:</p>
+
+<p>User-agent: ChatGPT-User
+Disallow:</p>
+
+<p>User-agent: ClaudeBot
+Disallow:</p>
+
+<p>User-agent: PerplexityBot
+Disallow:</p>
+
+<h1 id="toc_7">Block AI training crawlers (content IP protection)</h1>
+
+<p>User-agent: CCBot
+Disallow: /</p>
+
+<p>User-agent: anthropic-ai
+Disallow: /</p>
+
+<p>User-agent: Bytespider
+Disallow: /</p>
+
+<p>User-agent: cohere-ai
+Disallow: /</p>
+
+<h1 id="toc_8">Keep Google-Extended blocked unless you want Gemini training on your content</h1>
+
+<p>User-agent: Google-Extended
+Disallow: /</p>
+
+<p>Sitemap: https://www.netzeffekt.de/sitemap.default.xml
+```</p>
+
+<p>This approach <strong>maximizes AI search discovery</strong> (ChatGPT, Perplexity, Claude web) while protecting content from being used as raw training data.</p>
+
+<hr>
+
+<h2 id="toc_9">2. llms.txt Status</h2>
+
+<p><strong>Status: MISSING ❌</strong></p>
+
+<p>No <code>llms.txt</code> file exists at <code>https://www.netzeffekt.de/llms.txt</code>.</p>
+
+<p>The llms.txt standard (emerging as of late 2025) gives AI systems a structured summary of your site, helping them understand what you do, your expertise, and which pages are most authoritative. This is particularly high-value for netzeffekt because AI assistants are increasingly used for &quot;find me a performance marketing agency in Munich&quot; type queries.</p>
+
+<p><strong>Recommended <code>/llms.txt</code> for netzeffekt.de:</strong>
+```</p>
+
+<h1 id="toc_10">netzeffekt GmbH</h1>
+
+<blockquote>
+<p>netzeffekt is a digital performance marketing agency founded in 2012,
+headquartered in Munich (Germany) with an office in Vienna (Austria).
+Part of the Jung von Matt Group. 74 employees.
+Motto: &quot;We turn traffic into sales.&quot;</p>
+</blockquote>
+
+<h2 id="toc_11">Core Services</h2>
+
+<ul>
+<li><a href="https://www.netzeffekt.de/leistungen">Performance Marketing</a>: SEA, Social Media, Display, Native, YouTube, Mobile/InApp, Affiliate</li>
+<li><a href="https://www.netzeffekt.de/leistungen">UX &amp; Conversion</a>: Landing Pages, Websites, SEO, CRO, Banner &amp; Video Ads</li>
+<li><a href="https://www.netzeffekt.de/leistungen">Data &amp; Insights</a>: Digital Analytics, Dashboards, A/B Testing, Data Strategy</li>
+<li><a href="https://www.netzeffekt.de/leistungen">Financial Marketing</a>: Specialized performance marketing for banks, insurers, and financial services</li>
+</ul>
+
+<h2 id="toc_12">Case Studies &amp; Work</h2>
+
+<ul>
+<li><a href="https://www.netzeffekt.de/cases">Client Cases</a>: Portfolio including Vodafone, DKB, BBBank, Santander, Munich Re, Hyundai, Burger King, Tchibo</li>
+</ul>
+
+<h2 id="toc_13">Knowledge Hub</h2>
+
+<ul>
+<li><a href="https://www.netzeffekt.de/stories/wissen">Wissen</a>: Expert articles on performance marketing, analytics, and digital strategy</li>
+</ul>
+
+<h2 id="toc_14">About</h2>
+
+<ul>
+<li>Founded: 2012</li>
+<li>Managing Directors: Wolfgang Vogt, Werner Kubitscheck, Bernd Stieber</li>
+<li>Munich: Agnes-Bernauer-Straße 90, 80687 München</li>
+<li>Vienna: Mariahilfer Straße 101/3/51, A-1060 Wien</li>
+<li>Email: info@netzeffekt.de</li>
+<li>Certifications: Google Premier Partner, Meta Business Partner, Microsoft Advertising Partner</li>
+</ul>
+
+<h2 id="toc_15">Key Differentiators</h2>
+
+<ul>
+<li>Finance sector marketing expertise (banking, insurance, fintech)</li>
+<li>Full-funnel performance approach (Media + UX + Insights)</li>
+<li>Part of Jung von Matt network</li>
+<li>12+ years of measurable results</li>
+</ul>
+
+<h2 id="toc_16">Contact</h2>
+
+<ul>
+<li><a href="https://www.netzeffekt.de/kontakt">Kontakt</a>: Get in touch</li>
+<li><a href="https://www.netzeffekt.de/karriere">Karriere</a>: Career opportunities
+```</li>
+</ul>
+
+<hr>
+
+<h2 id="toc_17">3. Brand Mention Analysis</h2>
+
+<h3 id="toc_18">Entity Presence Map</h3>
+
+<table>
+<thead>
+<tr>
+<th>Platform</th>
+<th>Status</th>
+<th>Strength</th>
+<th>Notes</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td><strong>LinkedIn</strong></td>
+<td>✅ Active</td>
+<td>High</td>
+<td>Company page at linkedin.com/company/netzeffekt-gmbh; posts about campaigns, events, recruiting</td>
+</tr>
+<tr>
+<td><strong>Jung von Matt / jvm.com</strong></td>
+<td>✅ Listed</td>
+<td>Very High</td>
+<td>Listed as JvM network agency — major authority signal from a well-known creative group</td>
+</tr>
+<tr>
+<td><strong>Crunchbase</strong></td>
+<td>✅ Listed</td>
+<td>Medium</td>
+<td>Company profile present (useful for ChatGPT/AI citation via structured company data)</td>
+</tr>
+<tr>
+<td><strong>Sortlist</strong></td>
+<td>✅ Listed</td>
+<td>Medium</td>
+<td>Agency directory with profile and potential reviews</td>
+</tr>
+<tr>
+<td><strong>Agenturmatching.de</strong></td>
+<td>✅ Listed</td>
+<td>Medium</td>
+<td>German agency directory</td>
+</tr>
+<tr>
+<td><strong>wlw.com</strong></td>
+<td>✅ Listed</td>
+<td>Low-Medium</td>
+<td>Business directory</td>
+</tr>
+<tr>
+<td><strong>intelliAd</strong></td>
+<td>✅ Preferred Partner</td>
+<td>Medium</td>
+<td>Niche but relevant tech partnership citation</td>
+</tr>
+<tr>
+<td><strong>feedbax.ai</strong></td>
+<td>✅ Listed</td>
+<td>Low</td>
+<td>AI agency review platform</td>
+</tr>
+<tr>
+<td><strong>Wikipedia</strong></td>
+<td>❌ Not found</td>
+<td>N/A</td>
+<td><strong>No Wikipedia page</strong> — significant gap for ChatGPT citations (47.9% of ChatGPT answers cite Wikipedia)</td>
+</tr>
+<tr>
+<td><strong>Reddit</strong></td>
+<td>❌ Not found</td>
+<td>N/A</td>
+<td><strong>No Reddit mentions</strong> — Perplexity cites Reddit in 46.7% of responses</td>
+</tr>
+<tr>
+<td><strong>YouTube</strong></td>
+<td>❌ Not found</td>
+<td>N/A</td>
+<td><strong>No YouTube channel</strong> — YouTube mentions have 0.737 correlation with AI citations (strongest signal)</td>
+</tr>
+<tr>
+<td><strong>Xing</strong></td>
+<td>Unknown</td>
+<td>Medium</td>
+<td>Likely present (German professional network) — should verify</td>
+</tr>
+<tr>
+<td><strong>Google Business Profile</strong></td>
+<td>Likely ✅</td>
+<td>High</td>
+<td>Should have profiles for Munich + Vienna — verify both are claimed and optimized</td>
+</tr>
+</tbody>
+</table>
+
+<h3 id="toc_19">Key Finding: JvM Affiliation Underutilized</h3>
+
+<p>netzeffekt is part of the <strong>Jung von Matt Group</strong> (jvm.com) — one of Germany&#39;s most recognized advertising networks. This affiliation:
+- Provides a strong brand mention signal from a high-authority domain
+- Should be referenced in Organization schema <code>sameAs</code> links
+- Is listed on the website but not structured in schema for AI discovery</p>
+
+<p><strong>JvM connection amplifies AI citation chances significantly</strong> — when an AI system searches for &quot;netzeffekt&quot;, finding it associated with Jung von Matt on jvm.com substantially boosts entity confidence.</p>
+
+<hr>
+
+<h2 id="toc_20">4. Passage-Level Citability Analysis</h2>
+
+<h3 id="toc_21">Outstanding Asset: Benchmark Analyse für Girokonten</h3>
+
+<p>This is the strongest citability piece on the entire site. It hits nearly every AI citation signal:</p>
+
+<p><strong>Citability Signals Present:</strong>
+- ✅ Original research (not found elsewhere): 12 banks, 45+ KPIs, 7 netzeffekt experts
+- ✅ Specific quantitative data: &quot;1.2 million new checking accounts opened annually in Germany&quot;
+- ✅ Clear comparison structure (table with 4 bank categories)
+- ✅ Expert credentials: Bernd Stieber (20+ years), Christoph Herberg (15+ years)
+- ✅ Word count: ~2,200 words (exceeds optimal 134-167 word passage density)
+- ✅ Multi-level headings (H2/H3 breakdown)</p>
+
+<p><strong>Citability Signals Missing:</strong>
+- ❌ No Article schema (prevents structured citation by AI)
+- ❌ No Person schema for the expert team
+- ❌ No source citations for the &quot;1.2 million accounts&quot; stat
+- ❌ No &quot;Key Takeaway&quot; or &quot;Summary&quot; box (the most citable passage format)
+- ❌ Article URL not optimized for the search query it answers</p>
+
+<p><strong>Recommended citability improvements for this article:</strong></p>
+
+<p>Add a &quot;Quick Summary&quot; block at the top (134-167 words — the optimal AI citation length):
+<code>
+Die netzeffekt Benchmark Analyse für Girokonten 2024 untersucht 12 Banken
+aus vier Kategorien (Direktbanken, Filialbanken, Neobanken, Genossenschafts-
+und Sparkassenbanken) anhand von 45+ KPIs. Neobanken wie N26, bunq und
+Revolut führen beim Onboarding-Prozess – ihr Kontoeröffnungsflow ähnelt
+einem Social-Media-Login. Direktbanken wie ING und DKB punkten bei
+Touchpoint-Abdeckung und organischer Sichtbarkeit. Regionalbanken (z.B.
+Stadtsparkasse München, VR Bank München) zeigen Stärken bei datensparsamem
+Onboarding, haben aber Aufholbedarf bei digitalen Touchpoints. Fazit:
+Digitale Banken und Neobanken dominieren UX und Conversion, während
+traditionelle Institute Potenzial in der kanalübergreifenden Sichtbarkeit
+lassen. In Deutschland werden jährlich über 1,2 Millionen neue Girokonten
+eröffnet – der Wettbewerb um Neukunden ist hoch.
+</code></p>
+
+<hr>
+
+<h3 id="toc_22">All Other Content: Citability Assessment</h3>
+
+<table>
+<thead>
+<tr>
+<th>Page / Article</th>
+<th>Citability</th>
+<th>Why</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>Benchmark Analyse Girokonten</td>
+<td>82/100</td>
+<td>Original data, expert credentials, structured</td>
+</tr>
+<tr>
+<td>Homepage</td>
+<td>15/100</td>
+<td>Slogans only, no data, no definitions</td>
+</tr>
+<tr>
+<td>/leistungen (services)</td>
+<td>25/100</td>
+<td>Lists services but no definitions or data</td>
+</tr>
+<tr>
+<td>/agentur (about)</td>
+<td>30/100</td>
+<td>Has founding year, employee count, JvM mention</td>
+</tr>
+<tr>
+<td>Blog event reports</td>
+<td>10/100</td>
+<td>&quot;We attended conference X&quot; — zero AI citation value</td>
+</tr>
+<tr>
+<td>Brand Bidding article</td>
+<td>Unknown</td>
+<td>Not accessible; topic has high citation potential if substantive</td>
+</tr>
+</tbody>
+</table>
+
+<hr>
+
+<h2 id="toc_23">5. Server-Side Rendering Check</h2>
+
+<p><strong>Status: UNVERIFIED — Caution Required ⚠️</strong></p>
+
+<p>Evidence suggesting potential JavaScript dependency:
+- Title tags returned &quot;Not found&quot; on multiple page extractions (/stories, /cases, /leistungen, /agentur, /kontakt) — these should always be in <code>&lt;head&gt;</code>, not rendered by JS
+- Schema markup was not detectable in any page except the Cases page VideoObject
+- The CMS appears to be Craft CMS — which supports SSR — but a JS frontend layer (likely Vue.js or similar) may be rendering key <code>&lt;head&gt;</code> elements client-side</p>
+
+<p><strong>Why this matters for AI search:</strong>
+- AI crawlers (GPTBot, ClaudeBot, PerplexityBot) <strong>do NOT execute JavaScript</strong>
+- If title tags, meta descriptions, canonical tags, or hreflang are injected by JavaScript, AI crawlers see none of them
+- This means the site&#39;s basic SEO metadata may be invisible to AI systems</p>
+
+<p><strong>Verification required:</strong>
+```bash</p>
+
+<h1 id="toc_24">Check if title tag is in raw HTML or JS-rendered</h1>
+
+<p>curl -s https://www.netzeffekt.de | grep -i &quot;<title>&quot;</p>
+
+<h1 id="toc_25">If empty result — JS rendering issue confirmed</h1>
+
+<div><pre><code class="language-none">
+**Fix if JS rendering is confirmed:**
+- Move `&lt;title&gt;`, `&lt;meta&gt;`, `&lt;link rel=&quot;canonical&quot;&gt;`, `&lt;link rel=&quot;alternate&quot; hreflang&gt;`, and JSON-LD schema into the SSR template in Craft CMS — not injected by Vue/React
+- Use Craft&#39;s Seomatic plugin (standard for Craft SEO) to ensure all meta is server-rendered
+
+---
+
+## 6. Top 5 Highest-Impact GEO Changes
+
+### 1. Create llms.txt (Quick Win — 1 Hour)
+Add the recommended `/llms.txt` above. This directly signals to AI systems what netzeffekt does, its expertise, and which pages to prioritize. With AI assistants increasingly fielding &quot;find me a performance marketing agency&quot; queries, this is the fastest path to AI discoverability.
+
+### 2. Add Article + Person Schema to Benchmark Analysis (High Impact — 2 Hours)
+The benchmark analysis is already AI-citation-ready in content. Adding `Article` + `Person` schema transforms it from invisible to fully structured for AI indexing. This single piece has the right original data to be cited by Google AI Overviews for banking marketing queries.
+
+```json
+{
+  &quot;@context&quot;: &quot;https://schema.org&quot;,
+  &quot;@type&quot;: &quot;Article&quot;,
+  &quot;headline&quot;: &quot;Benchmark Analyse für Girokonten 2024&quot;,
+  &quot;description&quot;: &quot;netzeffekt analysiert 12 Banken über 45+ KPIs in den Bereichen Touchpoints, Landingpage und Onboarding&quot;,
+  &quot;author&quot;: [
+    {
+      &quot;@type&quot;: &quot;Person&quot;,
+      &quot;name&quot;: &quot;Bernd Stieber&quot;,
+      &quot;jobTitle&quot;: &quot;Managing Director&quot;,
+      &quot;description&quot;: &quot;20+ Jahre Erfahrung im Marketing für Banken und Versicherungen&quot;,
+      &quot;worksFor&quot;: {&quot;@type&quot;: &quot;Organization&quot;, &quot;name&quot;: &quot;netzeffekt GmbH&quot;}
+    },
+    {
+      &quot;@type&quot;: &quot;Person&quot;,
+      &quot;name&quot;: &quot;Christoph Herberg&quot;,
+      &quot;jobTitle&quot;: &quot;Senior Consultant&quot;,
+      &quot;description&quot;: &quot;15+ Jahre operative Marketingberatung&quot;,
+      &quot;worksFor&quot;: {&quot;@type&quot;: &quot;Organization&quot;, &quot;name&quot;: &quot;netzeffekt GmbH&quot;}
+    }
+  ],
+  &quot;publisher&quot;: {
+    &quot;@type&quot;: &quot;Organization&quot;,
+    &quot;name&quot;: &quot;netzeffekt GmbH&quot;,
+    &quot;logo&quot;: {&quot;@type&quot;: &quot;ImageObject&quot;, &quot;url&quot;: &quot;https://www.netzeffekt.de/path/to/logo.png&quot;}
+  },
+  &quot;datePublished&quot;: &quot;2024-08-06&quot;,
+  &quot;dateModified&quot;: &quot;2024-08-06&quot;,
+  &quot;mainEntityOfPage&quot;: {&quot;@type&quot;: &quot;WebPage&quot;, &quot;@id&quot;: &quot;https://www.netzeffekt.de/stories/wissen/benchmark-analyse-girokonten&quot;}
+}</code></pre></div>
+
+<h3 id="toc_26">3. Add Question-Based H2/H3 Headings to Service Pages (Medium Effort — 3-4 Hours)</h3>
+
+<p>AI Overviews prefer question-answer format. Reformatting service page headings from declarative to interrogative dramatically increases chance of AI citation for &quot;what is performance marketing&quot; type queries.</p>
+
+<p><strong>Current headings:</strong>
+- &quot;Unser Versprechen&quot; → <strong>&quot;Was unterscheidet netzeffekt von anderen Performance-Agenturen?&quot;</strong>
+- &quot;Leistungen und Service&quot; → <strong>&quot;Welche Performance Marketing Leistungen bietet netzeffekt?&quot;</strong>
+- &quot;Unser Mindset&quot; → <strong>&quot;Wie arbeitet netzeffekt?&quot;</strong></p>
+
+<p><strong>On /leistungen, add new FAQ section:</strong>
+- &quot;Was ist Performance Marketing?&quot;
+- &quot;Wie unterscheidet sich SEA von SEO?&quot;
+- &quot;Wann lohnt sich Affiliate Marketing?&quot;
+- &quot;Was kostet eine Performance Marketing Agentur?&quot;
+- &quot;Wie lange bis erste Ergebnisse sichtbar sind?&quot;</p>
+
+<h3 id="toc_27">4. Build Reddit Presence via r/marketing, r/PPC, r/SEO (High Impact, Sustained Effort)</h3>
+
+<p>Reddit is cited in <strong>46.7% of Perplexity responses</strong>. Zero netzeffekt mentions on Reddit means complete invisibility on Perplexity for almost any query. Strategy:</p>
+
+<ol>
+<li>netzeffekt team members (not brand accounts) contribute genuine expertise to:
+
+<ul>
+<li>r/PPC — Search/social advertising discussions</li>
+<li>r/SEO — Performance SEO topics</li>
+<li>r/fintech — Finance marketing discussions (unique niche)</li>
+<li>r/de — German business discussions</li>
+</ul></li>
+<li>The benchmark study is perfect for an organic Reddit post: &quot;We analyzed 12 German banks&#39; digital marketing — here&#39;s what we found&quot;</li>
+<li>Authenticity is key — participation must be genuine and non-promotional</li>
+</ol>
+
+<h3 id="toc_28">5. Launch YouTube Content Series (High Impact, High Effort)</h3>
+
+<p>YouTube mentions have the <strong>0.737 correlation</strong> with AI citations — the single strongest signal in the Ahrefs study. netzeffekt already has a showreel, so video production capability exists.</p>
+
+<p><strong>Content ideas with high AI citation potential:</strong>
+- &quot;Brand Bidding erklärt: Solltest du auf deinen eigenen Markennamen bieten?&quot;
+- &quot;Core Web Vitals für Nicht-Techniker: Was wirklich gemessen wird&quot;
+- &quot;Girokonto Marketing 2025: Was Direktbanken vs. Neobanken unterschiedlich machen&quot;
+- &quot;Performance Marketing Budget richtig aufteilen: Das 70/20/10-Modell&quot;</p>
+
+<p>Each video should have a matching written article (existing Wissen content) for multi-modal signal stacking.</p>
+
+<hr>
+
+<h2 id="toc_29">7. Content Reformatting for AI Citability</h2>
+
+<h3 id="toc_30">Homepage — Add a Citability-Optimized Introduction Block</h3>
+
+<p><strong>Current:</strong> Slogan-only, no citability.</p>
+
+<p><strong>Recommended addition</strong> (134-167 words — optimal citation length):
+<code>
+netzeffekt ist eine unabhängige Performance-Marketing-Agentur mit Sitz in
+München und Wien. Das 2012 gegründete Unternehmen beschäftigt 74 Mitarbeiter
+und gehört seit [Jahr] zur Jung-von-Matt-Gruppe. netzeffekt kombiniert
+Mediaeinkauf, UX-Optimierung und Datenanalyse zu einem messbaren Full-Funnel-
+Ansatz, der aus Traffic Conversions macht. Zu den Kunden zählen Vodafone,
+DKB, Santander, Munich Re, Hyundai, Burger King und Tchibo. Der Service-
+umfang reicht von Suchmaschinenwerbung (SEA) und Affiliate Marketing über
+Programmatic Display und CRO bis hin zu spezialisierten Lösungen für den
+Finanzsektor. Als Google Premier Partner, Meta Business Partner und Microsoft
+Advertising Partner setzt netzeffekt auf zertifizierte Plattformexpertise
+kombiniert mit branchenspezifischem Know-how – insbesondere für Banken,
+Versicherungen und Finanzdienstleister.
+</code></p>
+
+<p>This block: establishes facts (founded 2012, 74 employees, JvM), names clients (brand associations), states services (SEO keywords), cites certifications (authority signals), and fits the 134-167 word optimal range.</p>
+
+<hr>
+
+<h3 id="toc_31">/leistungen — Add Service Definitions</h3>
+
+<p>Each service needs a &quot;X is...&quot; definition sentence as the first line. Example:</p>
+
+<p><strong>SEA (Search Engine Advertising):</strong></p>
+
+<blockquote>
+<p>&quot;Suchmaschinenwerbung (SEA) bezeichnet bezahlte Anzeigen in Suchmaschinen wie Google und Bing, die bei relevanten Suchanfragen erscheinen und nur dann Kosten verursachen, wenn ein Nutzer klickt (Pay-per-Click).&quot;</p>
+</blockquote>
+
+<p><strong>Affiliate Marketing:</strong></p>
+
+<blockquote>
+<p>&quot;Affiliate Marketing ist ein leistungsbasiertes Online-Marketing-Modell, bei dem Partner (Affiliates) für jeden vermittelten Abschluss oder Kauf eine Provision erhalten — netzeffekt managt eines der größten Affiliate-Netzwerke im deutschsprachigen Raum.&quot;</p>
+</blockquote>
+
+<p>These definition patterns are the most-cited format in Google AI Overviews.</p>
+
+<hr>
+
+<h3 id="toc_32">/stories/wissen Articles — Standard Citability Template</h3>
+
+<p>Add to every Wissen article:</p>
+
+<div><pre><code class="language-markdown">## Zusammenfassung (TL;DR)
+[134-167 word self-contained summary that answers the core question
+the article addresses. Written as factual, citable prose.]
+
+## Was bedeutet [Topic]?
+[Definition sentence: &quot;[Topic] ist/bezeichnet/beschreibt...&quot;]
+
+## Häufige Fragen zu [Topic]
+**Frage 1?**
+[2-3 sentence direct answer]
+
+**Frage 2?**
+[2-3 sentence direct answer]</code></pre></div>
+
+<hr>
+
+<h2 id="toc_33">8. Schema Recommendations for AI Discoverability</h2>
+
+<h3 id="toc_34">Priority 1: SpecialAnnouncement → No (not relevant)</h3>
+
+<h3 id="toc_35">Priority 1: Organization with sameAs Entity Links</h3>
+
+<p>The <code>sameAs</code> array in Organization schema is critical for AI entity disambiguation. Without it, AI systems can&#39;t confirm that &quot;netzeffekt&quot; in one data source is the same &quot;netzeffekt&quot; as in another.</p>
+
+<div><pre><code class="language-javascript">{
+  &quot;@context&quot;: &quot;https://schema.org&quot;,
+  &quot;@type&quot;: &quot;Organization&quot;,
+  &quot;name&quot;: &quot;netzeffekt GmbH&quot;,
+  &quot;url&quot;: &quot;https://www.netzeffekt.de&quot;,
+  &quot;sameAs&quot;: [
+    &quot;https://de.linkedin.com/company/netzeffekt-gmbh&quot;,
+    &quot;https://www.crunchbase.com/organization/netzeffekt&quot;,
+    &quot;https://www.jvm.com/de/agencies/netzeffekt-muenchen/&quot;,
+    &quot;https://www.jvm.com/offices/netzeffekt/&quot;,
+    &quot;https://www.wikidata.org/wiki/[ADD WHEN WIKIDATA ENTRY CREATED]&quot;
+  ]
+}</code></pre></div>
+
+<h3 id="toc_36">Priority 2: Person Schema for Key Executives</h3>
+
+<div><pre><code class="language-javascript">{
+  &quot;@context&quot;: &quot;https://schema.org&quot;,
+  &quot;@type&quot;: &quot;Person&quot;,
+  &quot;name&quot;: &quot;Bernd Stieber&quot;,
+  &quot;jobTitle&quot;: &quot;Managing Director &amp; Co-Founder&quot;,
+  &quot;worksFor&quot;: {
+    &quot;@type&quot;: &quot;Organization&quot;,
+    &quot;name&quot;: &quot;netzeffekt GmbH&quot;,
+    &quot;url&quot;: &quot;https://www.netzeffekt.de&quot;
+  },
+  &quot;knowsAbout&quot;: [&quot;Performance Marketing&quot;, &quot;Financial Services Marketing&quot;, &quot;Digital Advertising&quot;],
+  &quot;sameAs&quot;: [&quot;https://de.linkedin.com/in/[bernd-stieber-linkedin-slug]&quot;]
+}</code></pre></div>
+
+<p>Repeat for Wolfgang Vogt and Werner Kubitscheck. Add to /agentur page.</p>
+
+<h3 id="toc_37">Priority 3: FAQPage Schema for Service Pages</h3>
+
+<div><pre><code class="language-javascript">{
+  &quot;@context&quot;: &quot;https://schema.org&quot;,
+  &quot;@type&quot;: &quot;FAQPage&quot;,
+  &quot;mainEntity&quot;: [
+    {
+      &quot;@type&quot;: &quot;Question&quot;,
+      &quot;name&quot;: &quot;Was ist Performance Marketing?&quot;,
+      &quot;acceptedAnswer&quot;: {
+        &quot;@type&quot;: &quot;Answer&quot;,
+        &quot;text&quot;: &quot;Performance Marketing bezeichnet Online-Marketing-Maßnahmen, deren Erfolg direkt messbar ist — z.B. Klicks, Leads oder Käufe. Im Gegensatz zu klassischer Markenwerbung zahlen Unternehmen nur für tatsächlich erzielte Ergebnisse. netzeffekt kombiniert SEA, Affiliate, Social Media und Programmatic Display zu einem messbaren Full-Funnel-Ansatz.&quot;
+      }
+    }
+  ]
+}</code></pre></div>
+
+<hr>
+
+<h2 id="toc_38">9. RSL 1.0 (Really Simple Licensing) Status</h2>
+
+<p><strong>Status: Not Implemented ❌</strong></p>
+
+<p>RSL 1.0 is a December 2025 standard backed by Reddit, Yahoo, Medium, Cloudflare, Akamai, and Creative Commons that allows sites to declare machine-readable licensing terms for AI use.</p>
+
+<p><strong>Recommendation:</strong> Implement RSL once the standard is more widely required. For now, the robots.txt AI crawler management above is the more impactful priority.</p>
+
+<hr>
+
+<h2 id="toc_39">10. Quick Reference: GEO Priority Matrix</h2>
+
+<table>
+<thead>
+<tr>
+<th>Action</th>
+<th>Effort</th>
+<th>Platform Impact</th>
+<th>Timeline</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>Create <code>/llms.txt</code></td>
+<td>1 hour</td>
+<td>All platforms</td>
+<td>This week</td>
+</tr>
+<tr>
+<td>Update robots.txt AI crawlers</td>
+<td>30 min</td>
+<td>All platforms</td>
+<td>This week</td>
+</tr>
+<tr>
+<td>Add Article + Person schema to benchmark article</td>
+<td>2 hours</td>
+<td>Google AIO, Bing</td>
+<td>This week</td>
+</tr>
+<tr>
+<td>Add sameAs to Organization schema</td>
+<td>1 hour</td>
+<td>All platforms</td>
+<td>This week</td>
+</tr>
+<tr>
+<td>Add citability block to homepage</td>
+<td>1 hour</td>
+<td>Google AIO</td>
+<td>This week</td>
+</tr>
+<tr>
+<td>Add question-based H2/H3 to service pages</td>
+<td>3-4 hours</td>
+<td>Google AIO</td>
+<td>Week 2</td>
+</tr>
+<tr>
+<td>Add FAQPage schema to /leistungen</td>
+<td>2 hours</td>
+<td>Google AIO</td>
+<td>Week 2</td>
+</tr>
+<tr>
+<td>Create Wikidata entity entry</td>
+<td>1 hour</td>
+<td>ChatGPT, Perplexity</td>
+<td>Week 2</td>
+</tr>
+<tr>
+<td>Reddit participation strategy</td>
+<td>Ongoing</td>
+<td>Perplexity</td>
+<td>Month 2+</td>
+</tr>
+<tr>
+<td>YouTube content series launch</td>
+<td>High</td>
+<td>All platforms</td>
+<td>Quarter 2</td>
+</tr>
+<tr>
+<td>Author profile pages (/team/[name])</td>
+<td>Medium</td>
+<td>E-E-A-T + AI</td>
+<td>Month 2</td>
+</tr>
+</tbody>
+</table>
+
+<hr>
+
+<p><em>Generated by Claude Code SEO Audit on 2026-02-28</em></p>
+
+<hr>
+
+<h2 id="toc_40">Sources</h2>
+
+<ul>
+<li><a href="https://de.linkedin.com/company/netzeffekt-gmbh">netzeffekt GmbH | LinkedIn</a></li>
+<li><a href="https://www.jvm.com/de/agencies/netzeffekt-muenchen/">netzeffekt München | jvm.com</a></li>
+<li><a href="https://www.crunchbase.com/organization/netzeffekt">netzeffekt | Crunchbase</a></li>
+<li><a href="https://www.sortlist.com/agency/netzeffekt-gmbh">netzeffekt GmbH | Sortlist</a></li>
+<li><a href="https://www.agenturmatching.de/en/a/netzeffekt">netzeffekt GmbH | Agenturmatching</a></li>
+<li><a href="https://www.intelliad.de/preferred-partner-netzeffekt/">netzeffekt | intelliAd Preferred Partner</a></li>
+</ul>
+
+
+
+
+</body>
+
+</html>
